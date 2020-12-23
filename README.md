@@ -5,7 +5,7 @@
 Follow the official guide to install [Detectron2 0.1.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) on your pc.
 
 ### Data Preparation
-If you want to use this code with your dataset arange the dataset in the format of COCO. Inside the script uda_train.py register your dataset using <br> ```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
+If you want to use this code with your dataset arrange the dataset in the format of COCO. Inside the script uda_train.py register your dataset using <br> ```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_test",{},"path_annotations","path_images")```<br>
 
