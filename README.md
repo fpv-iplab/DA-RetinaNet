@@ -24,11 +24,11 @@ If you want to test the model, set to 0 the number of iteration and run the uda_
 ## Citation
 Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use this repository for your project.
 ```
-@misc{pasqualino2020unsupervised,
-      title={An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites}, 
-      author={Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella},
-      year={2020},
-      eprint={2008.01882},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{pasqualino2021synthetic,
+  url = { https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/ },
+  pdf = { https://arxiv.org/pdf/2008.01882v2.pdf },
+  journal = {  Image and Vision Computing  },
+  year = { 2021 },
+  author = { Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella },
+  title = { An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites },
 }
