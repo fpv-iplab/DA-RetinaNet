@@ -11,10 +11,12 @@ If you want to use this code with your dataset arrange the dataset in the format
 
 ### Training
 Replace at the following path ```detectron2/modeling/meta_arch/``` the retinanet.py script with our retinanet.py. Do the same for the fpn.py file at the path ```detectron2/modeling/backbone/```<br>
-Run the script train.py
+Run the script uda_train.py
+Trained model is available at this links: <br>
+[DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 
 ### Testing
-If you want to test the model, load the new weights and set to 0 the number of iteration and run the uda_train.py
+If you want to test the model load the new weights, set to 0 the number of iterations and run the uda_train.py
 
 ### Results
 <p>
