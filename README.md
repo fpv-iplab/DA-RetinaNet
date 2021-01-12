@@ -19,13 +19,9 @@ Trained model is available at this links: <br>
 If you want to test the model load the new weights, set to 0 the number of iterations and run the uda_train.py
 
 ### Results
-<p>
-<img src='./Images/results.png' width=42%;/>
-</p>
-
 <table style="width:100%">
   <tr>
-    <th>Name</th>
+    <th></th>
     <th colspan="2">image to image translation</th>
   </tr>
   <tr>
