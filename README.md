@@ -23,12 +23,12 @@ If you want to test the model load the new weights, set to 0 the number of itera
 <img src='./Images/results.png' width=42%;/>
 </p>
 
-|                 |                image-to-Image translation   |
-| --------------- |:------------:| ----------------------------:|
-| Object Detector |     None     |       Synthetic to Real      |
-| DA-Faster RCNN  |    12.94%    |             33.20%           |
-| Strong Weak     |    25.12%    |             47.70%           |
-| DA-RetinaNet    |    31.04%    |             58.01%           |
+|                 |    image-to-Image translation    |
+| Object Detector |     None     | Synthetic to Real |
+| --------------- |:------------:| -----------------:|
+| DA-Faster RCNN  |    12.94%    |       33.20%      |
+| Strong Weak     |    25.12%    |       47.70%      |
+| DA-RetinaNet    |    31.04%    |       58.01%      |
 
 ## Citation
 Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use this repository for your project.
