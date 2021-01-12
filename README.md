@@ -24,7 +24,7 @@ If you want to test the model load the new weights, set to 0 the number of itera
 </p>
 
 |                 |      image-to-Image translation    |
-| -------------   |:------------:| -------------------:|
+| -------------   |:-------------| -------------------:|
 | Object Detector |     None     |  Synthetic to Real  |
 | -------------   |:-------------| -------------------:|
 | DA-Faster RCNN  |    12.94%    |        33.20%       |
