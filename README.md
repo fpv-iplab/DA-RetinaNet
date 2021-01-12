@@ -14,6 +14,7 @@ Replace at the following path ```detectron2/modeling/meta_arch/``` the retinanet
 Run the script uda_train.py <br>
 Trained model is available at this links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
+[DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
 ### Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and run the uda_train.py
@@ -22,7 +23,7 @@ If you want to test the model load the new weights, set to 0 the number of itera
 <table style="width:100%">
   <tr>
     <th></th>
-    <th colspan="2">image to image translation</th>
+    <th colspan="2">image to image translation (CycleGAN)</th>
   </tr>
   <tr>
     <td>Object Detector</td>
