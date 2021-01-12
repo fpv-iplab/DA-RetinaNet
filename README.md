@@ -23,13 +23,6 @@ If you want to test the model load the new weights, set to 0 the number of itera
 <img src='./Images/results.png' width=42%;/>
 </p>
 
-|:                | <td colspan=2> image-to-Image translation  :|||
-| Object Detector |     None     | Synthetic to Real |
-| --------------- |:------------:| -----------------:|
-| DA-Faster RCNN  |    12.94%    |       33.20%      |
-| Strong Weak     |    25.12%    |       47.70%      |
-| DA-RetinaNet    |    31.04%    |       58.01%      |
-
 <table style="width:100%">
   <tr>
     <th>Name</th>
@@ -39,6 +32,21 @@ If you want to test the model load the new weights, set to 0 the number of itera
     <td>Object Detector</td>
     <td>None</td>
     <td>Synthetic to Real</td>
+  </tr>
+   <tr>
+    <td>DA-Faster RCNN</td>
+    <td>12.94%</td>
+    <td>33.20%</td>
+  </tr>
+   <tr>
+    <td>StrongWeak</td>
+    <td>25.12%</td>
+    <td>47.70%</td>
+  </tr>
+  <tr>
+    <td>DA-RetinaNet</td>
+    <td>31.04%</td>
+    <td>58.01%</td>
   </tr>
 </table>
 ## Citation
