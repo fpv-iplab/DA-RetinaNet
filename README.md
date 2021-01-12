@@ -32,3 +32,6 @@ Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use t
   author = { Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella },
   title = { An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites },
 }
+```
+## Other Works
+[MDA-RetinaNet](https://github.com/fpv-iplab/MDA-RetinaNet)
