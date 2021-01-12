@@ -30,6 +30,17 @@ If you want to test the model load the new weights, set to 0 the number of itera
 | Strong Weak     |    25.12%    |       47.70%      |
 | DA-RetinaNet    |    31.04%    |       58.01%      |
 
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th colspan="2">image to image translation</th>
+  </tr>
+  <tr>
+    <td>Object Detector</td>
+    <td>None</td>
+    <td>Synthetic to Real</td>
+  </tr>
+</table>
 ## Citation
 Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use this repository for your project.
 ```
