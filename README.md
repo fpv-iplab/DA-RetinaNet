@@ -20,6 +20,10 @@ Trained model is available at this links: <br>
 If you want to test the model load the new weights, set to 0 the number of iterations and run the uda_train.py
 
 ### Results
+<p>
+  Results of DA-Faster RCNN, Strong-Weak and the proposed DA-RetinaNet combined with image-to-image translation approach.
+</p>
+
 <table style="width:100%">
   <tr>
     <th></th>
