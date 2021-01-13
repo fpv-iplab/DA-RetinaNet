@@ -56,15 +56,15 @@ If you want to test the model load the new weights, set to 0 the number of itera
 Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use this repository for your project.
 ```
 @article{PASQUALINO2021104098,
-  title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
-  journal = "Image and Vision Computing",
-  pages = "104098",
-  year = "2021",
-  issn = "0262-8856",
-  doi = "https://doi.org/10.1016/j.imavis.2021.104098",
-  url = "http://www.sciencedirect.com/science/article/pii/S0262885621000032",
-  author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
-  keywords = "Object detection, Cultural sites, First person vision, Unsupervised domain adaptation",
+    title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
+    journal = "Image and Vision Computing",
+    pages = "104098",
+    year = "2021",
+    issn = "0262-8856",
+    doi = "https://doi.org/10.1016/j.imavis.2021.104098",
+    url = "http://www.sciencedirect.com/science/article/pii/S0262885621000032",
+    author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
+    keywords = "Object detection, Cultural sites, First person vision, Unsupervised domain adaptation",
 }
 ```
 ## Other Works
