@@ -1,4 +1,4 @@
-# Detectron2 implementation of DA-RetinaNet [An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites](https://arxiv.org/abs/2008.01882v3) (Image and Vision Computing 2021)
+# Detectron2 implementation of DA-RetinaNet [An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites](http://www.sciencedirect.com/science/article/pii/S0262885621000032) (Image and Vision Computing 2021)
 <img src='./Images/DA-RetinaNet.png' width=90%/>
 
 ## Introduction
@@ -62,7 +62,6 @@ Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use t
     year = "2021",
     issn = "0262-8856",
     doi = "https://doi.org/10.1016/j.imavis.2021.104098",
-    url = "http://www.sciencedirect.com/science/article/pii/S0262885621000032",
     author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
 }
 ```
