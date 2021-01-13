@@ -56,7 +56,7 @@ If you want to test the model load the new weights, set to 0 the number of itera
 
 
 ## Citation
-Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use this repository for your project.
+Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) if you use this repository for your project.
 ```
 @article{PASQUALINO2021104098,
     title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
