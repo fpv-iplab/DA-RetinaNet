@@ -64,7 +64,6 @@ Please cite the following [paper](https://arxiv.org/abs/2008.01882) if you use t
     doi = "https://doi.org/10.1016/j.imavis.2021.104098",
     url = "http://www.sciencedirect.com/science/article/pii/S0262885621000032",
     author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
-    keywords = "Object detection, Cultural sites, First person vision, Unsupervised domain adaptation",
 }
 ```
 ## Other Works
