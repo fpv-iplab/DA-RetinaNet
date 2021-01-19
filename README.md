@@ -35,7 +35,7 @@ Trained models are available at these links: <br>
 ### Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and run uda_train.py
 
-### Results
+### Results on the proposed dataset synthetic -> real
 <p>
   Results of DA-Faster RCNN, Strong-Weak and the proposed DA-RetinaNet combined with image-to-image translation approach.
 </p>
@@ -67,6 +67,45 @@ If you want to test the model load the new weights, set to 0 the number of itera
   </tr>
 </table>
 
+## Results on Cityscapes -> Foggy Cityscapes
+<p>
+Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performance scores of the methods marked with the “*” symbol are reported from the authors of their respective papers.
+</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Model</th>
+    <th>mAP</th>
+  </tr>
+  <tr>
+    <td>Faster RCNN</td>
+    <td>20.30%</td>
+  </tr>
+  <tr>
+    <td>DA-Faster RCNN</td>
+    <td>27.60%</td>
+  </tr>
+  <tr>
+    <td>Strong Weak</td>
+    <td>34.30%</td>
+  </tr>
+  <tr>
+    <td>Diversify and Match</td>
+    <td>34.60%</td>
+  </tr>
+  <tr>
+    <td>RetinaNet</td>
+    <td>40.25%</td>
+  </tr>
+  <tr>
+    <td>DA-RetinaNet</td>
+    <td>44.87%</td>
+  </tr>
+  <tr>
+    <td>Oracle</td>
+    <td>55.46%</td>
+  </tr>
+</table>
 
 ## Citation
 Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) if you use this repository for your project.
