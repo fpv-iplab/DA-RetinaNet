@@ -2,7 +2,20 @@
 <img src='./Images/DA-RetinaNet.png' width=90%/>
 
 ## Introduction
-Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) on your pc.
+Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) on your pc or run the docker file following these instructions:
+```
+cd docker/
+# Build 
+docker build -t detectron2:v0 .
+
+# Launch
+docker run --gpus all -it --shm-size=8gb -v /home/yourpath/:/home/yourpath --name=name_container detectron2:v0
+```
+If you exit from the container you can restart it using:
+```
+docker start name_container
+docker exec -it name_container /bin/bash
+```
 
 ### Dataset
 Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/)
