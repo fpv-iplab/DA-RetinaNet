@@ -67,7 +67,7 @@ If you want to test the model load the new weights, set to 0 the number of itera
   </tr>
 </table>
 
-## Results on Cityscapes -> Foggy Cityscapes
+### Results on Cityscapes -> Foggy Cityscapes
 <p>
 Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performance scores of the methods marked with the “*” symbol are reported from the authors of their respective papers.
 </p>
