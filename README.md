@@ -78,19 +78,19 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
     <th>mAP</th>
   </tr>
   <tr>
-    <td>Faster RCNN</td>
+    <td>Faster RCNN*</td>
     <td>20.30%</td>
   </tr>
   <tr>
-    <td>DA-Faster RCNN</td>
+    <td>DA-Faster RCNN*</td>
     <td>27.60%</td>
   </tr>
   <tr>
-    <td>Strong Weak</td>
+    <td>Strong Weak*</td>
     <td>34.30%</td>
   </tr>
   <tr>
-    <td>Diversify and Match</td>
+    <td>Diversify and Match*</td>
     <td>34.60%</td>
   </tr>
   <tr>
