@@ -103,7 +103,7 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
   </tr>
   <tr>
     <td>Oracle</td>
-    <td>55.46%</td>
+    <td>53.46%</td>
   </tr>
 </table>
 
