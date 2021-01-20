@@ -2,7 +2,7 @@
 <img src='./Images/DA-RetinaNet.png' width=90%/>
 
 ## Introduction
-Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) on your pc or run the docker file following these instructions:
+Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) on your pc or run the Dockerfile following these instructions:
 ```
 cd docker/
 # Build 
