@@ -1,8 +1,14 @@
 # Detectron2 implementation of DA-RetinaNet [An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites](http://www.sciencedirect.com/science/article/pii/S0262885621000032) (Image and Vision Computing 2021)
 <img src='./Images/DA-RetinaNet.png' width=90%/>
 
-## Introduction
-Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) on your pc or run the Dockerfile following these instructions:
+## Installation
+You can use this repo following one of these three methods:
+
+### Detectron 2 on you PC
+Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)
+
+### Detectron2 via Dockerfile
+Follow these instructions:
 ```
 cd docker/
 # Build 
@@ -16,6 +22,9 @@ If you exit from the container you can restart it using:
 docker start name_container
 docker exec -it name_container /bin/bash
 ```
+
+### Google Colab
+Load and run the DA-RetinaNet.ipynb on Google coolab following the instructions inside the notebook.
 
 ### Dataset
 Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
