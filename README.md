@@ -4,7 +4,7 @@
 ## Installation
 You can use this repo following one of these three methods:
 
-### Detectron 2 on you PC
+### Detectron 2 on your PC
 Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)
 
 ### Detectron2 via Dockerfile
