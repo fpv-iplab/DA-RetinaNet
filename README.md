@@ -51,7 +51,7 @@ If you want to test the model load the new weights, set to 0 the number of itera
     <td>Synthetic to Real</td>
   </tr>
    <tr>
-    <td>(DA-Faster RCNN)[https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf]</td>
+    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">(DA-Faster RCNN)</a></td>
     <td>12.94%</td>
     <td>33.20%</td>
   </tr>
