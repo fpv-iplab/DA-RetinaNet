@@ -78,7 +78,7 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
     <th>mAP</th>
   </tr>
   <tr>
-    <td>Faster RCNN*</td>
+    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">Faster RCNN*</a></td>
     <td>20.30%</td>
   </tr>
   <tr>
