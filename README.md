@@ -51,12 +51,12 @@ If you want to test the model load the new weights, set to 0 the number of itera
     <td>Synthetic to Real</td>
   </tr>
    <tr>
-    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">(DA-Faster RCNN)</a></td>
+    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">DA-Faster RCNN</a></td>
     <td>12.94%</td>
     <td>33.20%</td>
   </tr>
    <tr>
-    <td>(StrongWeak)[https://openaccess.thecvf.com/content_CVPR_2019/papers/Saito_Strong-Weak_Distribution_Alignment_for_Adaptive_Object_Detection_CVPR_2019_paper.pdf]</td>
+    <td><a href= "https://openaccess.thecvf.com/content_CVPR_2019/papers/Saito_Strong-Weak_Distribution_Alignment_for_Adaptive_Object_Detection_CVPR_2019_paper.pdf"> StrongWeak</a></td>
     <td>25.12%</td>
     <td>47.70%</td>
   </tr>
@@ -82,15 +82,15 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
     <td>20.30%</td>
   </tr>
   <tr>
-    <td>(DA-Faster RCNN*)[https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf]</td>
+    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">DA-Faster RCNN*</a></td>
     <td>27.60%</td>
   </tr>
   <tr>
-    <td>(Strong Weak*)[https://openaccess.thecvf.com/content_CVPR_2019/papers/Saito_Strong-Weak_Distribution_Alignment_for_Adaptive_Object_Detection_CVPR_2019_paper.pdf]</td>
+    <td><a href= "https://openaccess.thecvf.com/content_CVPR_2019/papers/Saito_Strong-Weak_Distribution_Alignment_for_Adaptive_Object_Detection_CVPR_2019_paper.pdf"> StrongWeak*</a></td>
     <td>34.30%</td>
   </tr>
   <tr>
-    <td>(Diversify and Match*)[https://openaccess.thecvf.com/content_CVPR_2019/papers/Kim_Diversify_and_Match_A_Domain_Adaptive_Representation_Learning_Paradigm_for_CVPR_2019_paper.pdf]</td>
+    <td><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Kim_Diversify_and_Match_A_Domain_Adaptive_Representation_Learning_Paradigm_for_CVPR_2019_paper.pdf">Diversify and Match*</td>
     <td>34.60%</td>
   </tr>
   <tr>
