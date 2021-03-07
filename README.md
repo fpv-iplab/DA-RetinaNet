@@ -33,9 +33,18 @@ Load and run the DA-RetinaNet.ipynb on Google Colab following the instructions i
 Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
 
 ### Data Preparation
-If you want to use this code with your dataset arrange the dataset in the format of COCO. Inside the script uda_train.py register your dataset using <br> ```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
+If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. For COCO annotations, inside the script uda_train.py register your dataset using <br>
+
+```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_test",{},"path_annotations","path_images")```<br>
+
+For PASCAL VOC annotations, inside the cityscape_train.py register your dataset using <br>
+
+```register_pascal_voc("city_trainS", "cityscape/VOC2007/", "train_s", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
+```register_pascal_voc("city_trainT", "cityscape/VOC2007/", "train_t", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
+```register_pascal_voc("city_testT", "cityscape/VOC2007/", "test_t", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
+You need to replace the parameters inside the ```register_pascal_voc()``` function according to your dataset name and classes. <br>
 
 ### Training
 Replace at the following path ```detectron2/modeling/meta_arch/``` the retinanet.py script with our retinanet.py. Do the same for the fpn.py file at the path ```detectron2/modeling/backbone/```<br>
