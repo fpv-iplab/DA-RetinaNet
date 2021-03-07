@@ -120,7 +120,7 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
 </table>
 
 ## Citation
-Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) and live a star ⭐ if you use this repository for your project.
+Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) and leave a star ⭐ if you use this repository for your project.
 ```
 @article{PASQUALINO2021104098,
     title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
