@@ -132,6 +132,7 @@ cfg_source.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-Detection/retinane
 cfg_source.SOLVER.IMS_PER_BATCH = 2
 cfg_source.SOLVER.BASE_LR = 0.0002
 cfg_source.SOLVER.MAX_ITER = 50000
+cfg_source.INPUT.MIN_SIZE_TRAIN = (0,)
 cfg_source.INPUT.MIN_SIZE_TEST = 0
 os.makedirs(cfg_source.OUTPUT_DIR, exist_ok=True)
 cfg_source.MODEL.RETINANET.NUM_CLASSES = 8
