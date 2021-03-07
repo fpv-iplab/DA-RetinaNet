@@ -33,13 +33,13 @@ Load and run the DA-RetinaNet.ipynb on Google Colab following the instructions i
 Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
 
 ### Data Preparation
-If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. For COCO annotations, inside the script uda_train.py register your dataset using <br>
+If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. For COCO annotations, inside the script uda_train.py register your dataset using: <br>
 
 ```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_test",{},"path_annotations","path_images")```<br>
 
-For PASCAL VOC annotations, inside the cityscape_train.py register your dataset using <br>
+For PASCAL VOC annotations, inside the cityscape_train.py register your dataset using: <br>
 
 ```register_pascal_voc("city_trainS", "cityscape/VOC2007/", "train_s", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
 ```register_pascal_voc("city_trainT", "cityscape/VOC2007/", "train_t", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
@@ -56,7 +56,7 @@ Trained models on the proposed dataset are available at these links: <br>
 ### Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and run uda_train.py
 
-### Results on the proposed dataset synthetic -> real
+### Results on the proposed dataset Synthetic -> Real
 <p>
   Results of DA-Faster RCNN, Strong-Weak and the proposed DA-RetinaNet combined with image-to-image translation approach.
 </p>
