@@ -59,7 +59,7 @@ Trained models on the proposed dataset are available at these links: <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
 ### Testing
-If you want to test the model load the new weights, set to 0 the number of iterations and run ```uda_train.py```
+If you want to test the model load the new weights, set to 0 the number of iterations and rerun the same script used for the training.
 
 ### Results on the proposed dataset Synthetic -> Real
 <p>
