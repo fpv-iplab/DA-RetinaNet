@@ -27,19 +27,19 @@ docker exec -it name_container /bin/bash
 ```
 
 ### Google Colab
-Load and run the DA-RetinaNet.ipynb on Google Colab following the instructions inside the notebook.
+Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.
 
 ### Dataset
 Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
 
 ### Data Preparation
-If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. For COCO annotations, inside the script uda_train.py register your dataset using: <br>
+If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. For COCO annotations, inside the script ```uda_train.py``` register your dataset using: <br>
 
 ```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_test",{},"path_annotations","path_images")```<br>
 
-For PASCAL VOC annotations, inside the cityscape_train.py register your dataset using: <br>
+For PASCAL VOC annotations, inside the ```cityscape_train.py``` register your dataset using: <br>
 
 ```register_pascal_voc("city_trainS", "cityscape/VOC2007/", "train_s", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
 ```register_pascal_voc("city_trainT", "cityscape/VOC2007/", "train_t", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
@@ -47,14 +47,14 @@ For PASCAL VOC annotations, inside the cityscape_train.py register your dataset 
 You need to replace the parameters inside the ```register_pascal_voc()``` function according to your dataset name and classes. <br>
 
 ### Training
-Replace at the following path ```detectron2/modeling/meta_arch/``` the retinanet.py script with our retinanet.py. Do the same for the fpn.py file at the path ```detectron2/modeling/backbone/```<br>
-Run the script uda_train.py <br>
+Replace at the following path ```detectron2/modeling/meta_arch/``` the ```retinanet.py``` script with our ```retinanet.py```. Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbone/```<br>
+Run the script ```uda_train.py``` for COCO annotations or ```cityscape_train.py``` for PASCAL VOC annotations <br>
 Trained models on the proposed dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
 ### Testing
-If you want to test the model load the new weights, set to 0 the number of iterations and run uda_train.py
+If you want to test the model load the new weights, set to 0 the number of iterations and run ```uda_train.py```
 
 ### Results on the proposed dataset Synthetic -> Real
 <p>
