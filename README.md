@@ -49,7 +49,8 @@ For PASCAL VOC annotations, inside the ```cityscape_train.py``` register your da
 You need to replace the parameters inside the ```register_pascal_voc()``` function according to your dataset name and classes. <br>
 
 ### Training
-Replace at the following path ```detectron2/modeling/meta_arch/``` the ```retinanet.py``` script with our ```retinanet.py```. Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbone/```<br>
+Replace at the following path ```detectron2/modeling/meta_arch/``` the ```retinanet.py``` script with our ```retinanet.py```. <br>
+Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbone/```<br>
 Run the script ```uda_train.py``` for COCO annotations or ```cityscape_train.py``` for PASCAL VOC annotations. <br>
 Trained models on the proposed dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
