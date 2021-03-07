@@ -140,6 +140,7 @@ model = build_model(cfg_source)
 
 cfg_target = get_cfg()
 cfg_target.DATASETS.TRAIN = ("city_trainT",)
+cfg_target.INPUT.MIN_SIZE_TRAIN = (0,)
 cfg_target.DATALOADER.NUM_WORKERS = 0
 cfg_target.SOLVER.IMS_PER_BATCH = 2
 
