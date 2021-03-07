@@ -45,6 +45,7 @@ For PASCAL VOC annotations, inside the ```cityscape_train.py``` register your da
 ```register_pascal_voc("city_trainS", "cityscape/VOC2007/", "train_s", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
 ```register_pascal_voc("city_trainT", "cityscape/VOC2007/", "train_t", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
 ```register_pascal_voc("city_testT", "cityscape/VOC2007/", "test_t", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])```<br>
+
 You need to replace the parameters inside the ```register_pascal_voc()``` function according to your dataset name and classes. <br>
 
 ### Training
