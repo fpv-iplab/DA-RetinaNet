@@ -1,4 +1,4 @@
-# Detectron2 implementation of DA-RetinaNet [An Unsupervised Domain Adaptation Scheme for Single-Stage Artwork Recognition in Cultural Sites](http://www.sciencedirect.com/science/article/pii/S0262885621000032) (Image and Vision Computing 2021)
+# Detectron2 implementation of DA-RetinaNet
 <img src='DA-RetinaNet.png' width=90%/>
 
 ## Installation
