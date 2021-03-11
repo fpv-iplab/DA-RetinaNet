@@ -1,5 +1,6 @@
 # Detectron2 implementation of DA-RetinaNet
-<img src='DA-RetinaNet.png' width=90%/>
+<center><img src='DA-RetinaNet.png' width=90%/></center>
+This is the implementation of our Image and Vision Computing 2021 work 'An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites'. The aim is to reduce the gap between source and target distribution improving the object detector performance on the target domain, in the screnario where training and test data are drawn from different distributions. The original paper can be found (here)[https://www.sciencedirect.com/science/article/pii/S0262885621000032?dgcid=rss_sd_all]
 
 ## Installation
 You can use this repo following one of these three methods:
