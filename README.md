@@ -27,10 +27,10 @@ docker exec -it name_container /bin/bash
 ### Google Colab
 Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.
 
-### Dataset
+## Dataset
 Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
 
-### Data Preparation
+## Data Preparation
 If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. <br>
 For COCO annotations, inside the script ```uda_train.py``` register your dataset using: <br>
 
@@ -46,7 +46,7 @@ For PASCAL VOC annotations, inside the ```cityscape_train.py``` register your da
 
 You need to replace the parameters inside the ```register_pascal_voc()``` function according to your dataset name and classes. <br>
 
-### Training
+## Training
 Replace at the following path ```detectron2/modeling/meta_arch/``` the ```retinanet.py``` script with our ```retinanet.py```. <br>
 Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbone/```<br>
 
@@ -56,10 +56,10 @@ Trained models on the proposed dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
-### Testing
+## Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and rerun the same script used for the training.
 
-### Results on the proposed dataset Synthetic -> Real
+## Results on the proposed dataset Synthetic -> Real
 <p>
   Results of DA-Faster RCNN, Strong-Weak and the proposed DA-RetinaNet combined with image-to-image translation approach.
 </p>
@@ -91,7 +91,7 @@ If you want to test the model load the new weights, set to 0 the number of itera
   </tr>
 </table>
 
-### Results on Cityscapes -> Foggy Cityscapes
+## Results on Cityscapes -> Foggy Cityscapes
 <p>
 Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performance scores of the methods marked with the “*” symbol are reported from the authors of their respective papers.
 </p>
