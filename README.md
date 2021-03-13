@@ -28,7 +28,7 @@ docker exec -it name_container /bin/bash
 Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.
 
 ## Dataset
-Dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
+The UDA-CH dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
 
 ## Data Preparation
 If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. <br>
@@ -52,7 +52,7 @@ Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbon
 
 Run the script ```uda_train.py``` for COCO annotations or ```cityscape_train.py``` for PASCAL VOC annotations. <br>
 
-Trained models on the proposed dataset are available at these links: <br>
+Trained models on the proposed UDA-CH dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
