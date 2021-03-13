@@ -56,7 +56,7 @@ Trained models on the proposed dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
-Trained model on Cityscapes to FoggyCityscapes is available at this links:
+Trained model on Cityscapes to FoggyCityscapes is available at this links: <br>
 [DA-RetinaNet_Cityscapes](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet_Cityscapes.pth) <br>
 
 ## Testing
