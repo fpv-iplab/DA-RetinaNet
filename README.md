@@ -56,6 +56,9 @@ Trained models on the proposed dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
+Trained model on Cityscapes to FoggyCityscapes is available at this links:
+[DA-RetinaNet_Cityscapes](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet_Cityscapes.pth) <br>
+
 ## Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and rerun the same script used for the training.
 
