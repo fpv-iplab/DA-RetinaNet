@@ -148,4 +148,4 @@ Please cite the following [paper](http://www.sciencedirect.com/science/article/p
 }
 ```
 ## Other Works
-[STMDA-RetinaNet](https://github.com/fpv-iplab/MDA-RetinaNet)
+[STMDA-RetinaNet](https://github.com/fpv-iplab/STMDA-RetinaNet)
