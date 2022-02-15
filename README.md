@@ -52,47 +52,16 @@ Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbon
 
 Run the script ```uda_train.py``` for COCO annotations or ```cityscape_train.py``` for PASCAL VOC annotations. <br>
 
+Trained model on Cityscapes to FoggyCityscapes is available at this link: <br>
+[DA-RetinaNet_Cityscapes](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet_Cityscapes.pth) <br>
+
 Trained models on the proposed UDA-CH dataset are available at these links: <br>
 [DA-RetinaNet](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet.pth) <br>
 [DA-RetinaNet-CycleGAN](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet-CycleGAN.pth) <br>
 
-Trained model on Cityscapes to FoggyCityscapes is available at this link: <br>
-[DA-RetinaNet_Cityscapes](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/DA-RetinaNet_Cityscapes.pth) <br>
-
 ## Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and rerun the same script used for the training.
 
-## Results on the proposed dataset Synthetic -> Real
-<p>
-  Results of DA-Faster RCNN, Strong-Weak and the proposed DA-RetinaNet combined with image-to-image translation approach.
-</p>
-
-<table style="width:100%">
-  <tr>
-    <th></th>
-    <th colspan="2">image to image translation (CycleGAN)</th>
-  </tr>
-  <tr>
-    <td>Object Detector</td>
-    <td>None</td>
-    <td>Synthetic to Real</td>
-  </tr>
-   <tr>
-    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">DA-Faster RCNN</a></td>
-    <td>12.94%</td>
-    <td>33.20%</td>
-  </tr>
-   <tr>
-    <td><a href= "https://openaccess.thecvf.com/content_CVPR_2019/papers/Saito_Strong-Weak_Distribution_Alignment_for_Adaptive_Object_Detection_CVPR_2019_paper.pdf"> StrongWeak</a></td>
-    <td>25.12%</td>
-    <td>47.70%</td>
-  </tr>
-  <tr>
-    <td>DA-RetinaNet</td>
-    <td>31.04%</td>
-    <td>58.01%</td>
-  </tr>
-</table>
 
 ## Results on Cityscapes -> Foggy Cityscapes
 <p>
@@ -131,6 +100,38 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
   <tr>
     <td>RetinaNet (Oracle)</td>
     <td>53.46%</td>
+  </tr>
+</table>
+
+## Results on the proposed dataset Synthetic -> Real
+<p>
+  Results of DA-Faster RCNN, Strong-Weak and the proposed DA-RetinaNet combined with image-to-image translation approach.
+</p>
+
+<table style="width:100%">
+  <tr>
+    <th></th>
+    <th colspan="2">image to image translation (CycleGAN)</th>
+  </tr>
+  <tr>
+    <td>Object Detector</td>
+    <td>None</td>
+    <td>Synthetic to Real</td>
+  </tr>
+   <tr>
+    <td><a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Domain_Adaptive_Faster_CVPR_2018_paper.pdf">DA-Faster RCNN</a></td>
+    <td>12.94%</td>
+    <td>33.20%</td>
+  </tr>
+   <tr>
+    <td><a href= "https://openaccess.thecvf.com/content_CVPR_2019/papers/Saito_Strong-Weak_Distribution_Alignment_for_Adaptive_Object_Detection_CVPR_2019_paper.pdf"> StrongWeak</a></td>
+    <td>25.12%</td>
+    <td>47.70%</td>
+  </tr>
+  <tr>
+    <td>DA-RetinaNet</td>
+    <td>31.04%</td>
+    <td>58.01%</td>
   </tr>
 </table>
 
