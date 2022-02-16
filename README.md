@@ -1,5 +1,19 @@
 # Detectron2 implementation of DA-RetinaNet
-This is the implementation of our Image and Vision Computing 2021 work 'An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites'. The aim is to reduce the gap between source and target distribution improving the object detector performance on the target domain when training and test data belong to different distributions. The original paper can be found [here](https://www.sciencedirect.com/science/article/pii/S0262885621000032?dgcid=rss_sd_all).<br> If you want to use this code with your dataset, please follow the following guide.
+This is the implementation of our Image and Vision Computing 2021 work 'An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites'. The aim is to reduce the gap between source and target distribution improving the object detector performance on the target domain when training and test data belong to different distributions. The original paper can be found [here](https://www.sciencedirect.com/science/article/pii/S0262885621000032?dgcid=rss_sd_all).<br> If you want to use this code with your dataset, please follow the following guide. <br>
+
+Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) and leave a star ⭐ if you use this repository for your project.
+```
+@article{PASQUALINO2021104098,
+    title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
+    journal = "Image and Vision Computing",
+    pages = "104098",
+    year = "2021",
+    issn = "0262-8856",
+    doi = "https://doi.org/10.1016/j.imavis.2021.104098",
+    author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
+}
+```
+
 <center><img src='DA-RetinaNet.png' width=90%/></center>
 
 ## Installation
@@ -134,18 +148,5 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
   </tr>
 </table>
 
-## Citation
-Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) and leave a star ⭐ if you use this repository for your project.
-```
-@article{PASQUALINO2021104098,
-    title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
-    journal = "Image and Vision Computing",
-    pages = "104098",
-    year = "2021",
-    issn = "0262-8856",
-    doi = "https://doi.org/10.1016/j.imavis.2021.104098",
-    author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
-}
-```
 ## Other Works
 [STMDA-RetinaNet](https://github.com/fpv-iplab/STMDA-RetinaNet)
