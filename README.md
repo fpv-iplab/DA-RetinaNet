@@ -13,7 +13,7 @@ Please cite the following [paper](http://www.sciencedirect.com/science/article/p
     author = "Giovanni Pasqualino and Antonino Furnari and Giovanni Signorello and Giovanni Maria Farinella",
 }
 ```
-
+## DA-RetinaNet Architecture
 <center><img src='DA-RetinaNet.png' width=90%/></center>
 
 ## Installation
