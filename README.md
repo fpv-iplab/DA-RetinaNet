@@ -28,7 +28,7 @@ docker exec -it name_container /bin/bash
 Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.
 
 ## Dataset
-The Cityscapes-Foggy Cityscapes dataset is available [here](https://github.com/GiovanniPasq/Cityscapes-FoggyCityscape)<br>
+The Cityscapes-Foggy Cityscapes dataset is available [here](https://github.com/fpv-iplab/Cityscapes-FoggyCityscapes)<br>
 The UDA-CH dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
 ## Data Preparation
 If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. <br>
