@@ -28,8 +28,8 @@ docker exec -it name_container /bin/bash
 Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.
 
 ## Dataset
+The Cityscapes dataset is available [here](https://www.cityscapes-dataset.com/)<br>
 The UDA-CH dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
-The Cityscapes dataset is available [here](https://www.cityscapes-dataset.com/)
 ## Data Preparation
 If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. <br>
 For COCO annotations, inside the script ```uda_train.py``` register your dataset using: <br>
