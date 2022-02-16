@@ -29,7 +29,7 @@ Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instruct
 
 ## Dataset
 The UDA-CH dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA/EGO-CH-OBJ-UDA.zip)
-
+The Cityscapes dataset is available [here](https://www.cityscapes-dataset.com/)
 ## Data Preparation
 If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. <br>
 For COCO annotations, inside the script ```uda_train.py``` register your dataset using: <br>
@@ -61,7 +61,6 @@ Trained models on the proposed UDA-CH dataset are available at these links: <br>
 
 ## Testing
 If you want to test the model load the new weights, set to 0 the number of iterations and rerun the same script used for the training.
-
 
 ## Results on Cityscapes -> Foggy Cityscapes
 <p>
