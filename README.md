@@ -1,7 +1,7 @@
 # Detectron2 implementation of DA-RetinaNet
 This is the implementation of our Image and Vision Computing 2021 work 'An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites'. The aim is to reduce the gap between source and target distribution improving the object detector performance on the target domain when training and test data belong to different distributions. The original paper can be found [here](https://www.sciencedirect.com/science/article/pii/S0262885621000032?dgcid=rss_sd_all).<br> If you want to use this code with your dataset, please follow the following guide. <br>
 
-Please cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) and leave a star ⭐ if you use this repository for your project.
+Please leave a star ⭐ and cite the following [paper](http://www.sciencedirect.com/science/article/pii/S0262885621000032) if you use this repository for your project.
 ```
 @article{PASQUALINO2021104098,
     title = "An unsupervised domain adaptation scheme for single-stage artwork recognition in cultural sites",
@@ -48,7 +48,7 @@ The UDA-CH dataset is available [here](https://iplab.dmi.unict.it/EGO-CH-OBJ-UDA
 If you want to use this code with your dataset arrange the dataset in the format of COCO or PASCAL VOC. <br>
 For COCO annotations, inside the script ```uda_train.py``` register your dataset using: <br>
 
-```register_coco_instances("dataset_name_soruce_training",{},"path_annotations","path_images")```<br>
+```register_coco_instances("dataset_name_source_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_training",{},"path_annotations","path_images")```<br>
 ```register_coco_instances("dataset_name_target_test",{},"path_annotations","path_images")```<br>
 
