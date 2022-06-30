@@ -149,4 +149,5 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
 </table>
 
 ## Other Works
-[STMDA-RetinaNet](https://github.com/fpv-iplab/STMDA-RetinaNet)
+[STMDA-RetinaNet](https://github.com/fpv-iplab/STMDA-RetinaNet)<br>
+[Detectron2 implementation of DA-Faster RCNN](https://github.com/GiovanniPasq/DA-Faster-RCNN)
