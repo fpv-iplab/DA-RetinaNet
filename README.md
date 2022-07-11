@@ -17,7 +17,7 @@ Please leave a star ⭐ and cite the following [paper](http://www.sciencedirect.
 <center><img src='DA-RetinaNet.png' width=90%/></center>
 
 ## Installation
-You can use this repo following one of these three methods:
+You can use this repo following one of these three methods:<br>
 NB: Detectron2 0.2.1 is required, installing other versions this code will not work.
 
 ### Detectron 2 on your PC
