@@ -18,6 +18,7 @@ Please leave a star ⭐ and cite the following [paper](http://www.sciencedirect.
 
 ## Installation
 You can use this repo following one of these three methods:
+NB: Detectron2 0.2.1 is required, installing other versions this code will not work.
 
 ### Detectron 2 on your PC
 Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)
