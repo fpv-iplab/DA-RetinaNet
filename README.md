@@ -21,7 +21,12 @@ You can use this repo following one of these three methods:<br>
 NB: Detectron2 0.2.1 is required, installing other versions this code will not work.
 
 ### Detectron 2 on your PC
-Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)
+Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)<br>
+Or<br>
+Download the official Detectron 0.2.1 from [here](https://github.com/facebookresearch/detectron2/archive/refs/tags/v0.2.1.zip)<br>
+Unzip the file and rename it in detectron2<br>
+run ```python -m pip install -e detectron2```
+
 
 ### Detectron2 via Dockerfile
 Follow these instructions:
