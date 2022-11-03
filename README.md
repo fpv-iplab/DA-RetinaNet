@@ -109,10 +109,6 @@ Results adaptation between Cityscapes and Foggy Cityscapes dataset. The performa
     <td>34.60%</td>
   </tr>
   <tr>
-    <td>RetinaNet</td>
-    <td>40.25%</td>
-  </tr>
-  <tr>
     <td>DA-RetinaNet</td>
     <td>44.87%</td>
   </tr>
