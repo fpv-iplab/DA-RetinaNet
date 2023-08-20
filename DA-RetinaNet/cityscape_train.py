@@ -2,22 +2,19 @@ import detectron2
 from detectron2.utils.logger import setup_logger
 setup_logger()
 import numpy as np
-import cv2
-import random
 from detectron2 import model_zoo
 from detectron2.config import get_cfg
 import logging
 import os
-from collections import OrderedDict
-from torch.nn.parallel import DistributedDataParallel
 import detectron2.utils.comm as comm
 from detectron2.checkpoint import DetectionCheckpointer, PeriodicCheckpointer
-from detectron2.data import MetadataCatalog, build_detection_test_loader, build_detection_train_loader
+from detectron2.data import build_detection_test_loader, build_detection_train_loader
 from detectron2.modeling import build_model
+from detectron2.engine import default_writers
 from detectron2.solver import build_lr_scheduler, build_optimizer
-from detectron2.utils.events import CommonMetricPrinter, EventStorage, JSONWriter, TensorboardXWriter
-import torch, torchvision
-from detectron2.data.datasets import register_coco_instances,load_coco_json, register_pascal_voc
+from detectron2.utils.events import EventStorage
+import torch
+from detectron2.data.datasets import register_pascal_voc
 
 #training set
 register_pascal_voc("city_trainS", "cityscape/VOC2007/", "train_s", 2007, ['car','person','rider','truck','bus','train','motorcycle','bicycle'])
@@ -33,28 +30,13 @@ def do_train(cfg_source, cfg_target, model, resume = False):
     model.train()
     optimizer = build_optimizer(cfg_source, model)
     scheduler = build_lr_scheduler(cfg_source, optimizer)
+    checkpointer = DetectionCheckpointer(model, cfg_source.OUTPUT_DIR, optimizer=optimizer, scheduler=scheduler)
 
-    checkpointer = DetectionCheckpointer(
-        model, cfg_source.OUTPUT_DIR, optimizer = optimizer, scheduler = scheduler
-    )
-    start_iter = (
-        checkpointer.resume_or_load(cfg_source.MODEL.WEIGHTS, resume = resume).get("iteration", -1) + 1
-    )
+    start_iter = (checkpointer.resume_or_load(cfg_source.MODEL.WEIGHTS, resume=resume).get("iteration", -1) + 1)
     max_iter = cfg_source.SOLVER.MAX_ITER
 
-    periodic_checkpointer = PeriodicCheckpointer(
-        checkpointer, cfg_source.SOLVER.CHECKPOINT_PERIOD, max_iter = max_iter
-    )
-
-    writers = (
-        [
-            CommonMetricPrinter(max_iter),
-            JSONWriter(os.path.join(cfg_source.OUTPUT_DIR, "metrics.json")),
-            TensorboardXWriter(cfg_source.OUTPUT_DIR),
-        ]
-        if comm.is_main_process()
-        else []
-    )
+    periodic_checkpointer = PeriodicCheckpointer(checkpointer, cfg_source.SOLVER.CHECKPOINT_PERIOD, max_iter=max_iter)
+    writers = default_writers(cfg_source.OUTPUT_DIR, max_iter) if comm.is_main_process() else []
 
     alpha3 = 0
     alpha4 = 0
@@ -71,9 +53,9 @@ def do_train(cfg_source, cfg_target, model, resume = False):
 
     with EventStorage(start_iter) as storage:
         for data_source,data_target, iteration in zip(data_loader_source, data_loader_target, range(start_iter, max_iter)):
-            iteration = iteration + 1
-            storage.step()
+            storage.iter = iteration
 
+            iteration = iteration + 1
             if (iteration % data_len) == 0:
                 current_epoch += 1
                 i = 1
@@ -119,7 +101,7 @@ def do_train(cfg_source, cfg_target, model, resume = False):
             storage.put_scalar("lr", optimizer.param_groups[0]["lr"], smoothing_hint=False)
             scheduler.step()
 
-            if iteration - start_iter > 5 and (iteration % 20 == 0 or iteration == max_iter):
+            if iteration - start_iter > 5 and ((iteration + 1) % 20 == 0 or iteration == max_iter - 1):
                 for writer in writers:
                     writer.write()
             periodic_checkpointer.step(iteration)
@@ -147,8 +129,7 @@ cfg_target.SOLVER.IMS_PER_BATCH = 2
 
 do_train(cfg_source,cfg_target,model,False)
 
-from detectron2.evaluation import COCOEvaluator, inference_on_dataset, PascalVOCDetectionEvaluator
-from detectron2.data import build_detection_test_loader
+from detectron2.evaluation import inference_on_dataset, PascalVOCDetectionEvaluator
 evaluator = PascalVOCDetectionEvaluator("city_testT")
 val_loader = build_detection_test_loader(cfg_source, "city_testT")
 res = inference_on_dataset(model, val_loader, evaluator)
