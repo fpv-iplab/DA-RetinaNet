@@ -1,6 +1,7 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+# Copyright (c) Facebook, Inc. and its affiliates.
 import math
 import fvcore.nn.weight_init as weight_init
+import torch
 import torch.nn.functional as F
 from torch import nn
 
@@ -19,8 +20,17 @@ class FPN(Backbone):
     It creates pyramid features built on top of some input feature maps.
     """
 
+    _fuse_type: torch.jit.Final[str]
+
     def __init__(
-        self, bottom_up, in_features, out_channels, norm="", top_block=None, fuse_type="sum"
+        self,
+        bottom_up,
+        in_features,
+        out_channels,
+        norm="",
+        top_block=None,
+        fuse_type="sum",
+        square_pad=0,
     ):
         """
         Args:
@@ -44,9 +54,11 @@ class FPN(Backbone):
             fuse_type (str): types for fusing the top down features and the lateral
                 ones. It can be "sum" (default), which sums up element-wise; or "avg",
                 which takes the element-wise mean of the two.
+            square_pad (int): If > 0, require input images to be padded to specific square size.
         """
         super(FPN, self).__init__()
         assert isinstance(bottom_up, Backbone)
+        assert in_features, in_features
 
         # Feature map strides and channels from the bottom up network (e.g. ResNet)
         input_shapes = bottom_up.output_shape()
@@ -87,7 +99,7 @@ class FPN(Backbone):
         self.lateral_convs = lateral_convs[::-1]
         self.output_convs = output_convs[::-1]
         self.top_block = top_block
-        self.in_features = in_features
+        self.in_features = tuple(in_features)
         self.bottom_up = bottom_up
         # Return feature names are "p<stage>", like ["p2", "p3", ..., "p6"]
         self._out_feature_strides = {"p{}".format(int(math.log2(s))): s for s in strides}
@@ -99,12 +111,17 @@ class FPN(Backbone):
         self._out_features = list(self._out_feature_strides.keys())
         self._out_feature_channels = {k: out_channels for k in self._out_features}
         self._size_divisibility = strides[-1]
+        self._square_pad = square_pad
         assert fuse_type in {"avg", "sum"}
         self._fuse_type = fuse_type
 
     @property
     def size_divisibility(self):
         return self._size_divisibility
+
+    @property
+    def padding_constraints(self):
+        return {"square_size": self._square_pad}
 
     def forward(self, x):
         """
@@ -119,29 +136,35 @@ class FPN(Backbone):
                 paper convention: "p<stage>", where stage has stride = 2 ** stage e.g.,
                 ["p2", "p3", ..., "p6"].
         """
-        # Reverse feature maps into top-down order (from low to high resolution)
         bottom_up_features = self.bottom_up(x)
-        x = [bottom_up_features[f] for f in self.in_features[::-1]]
         results = []
-        prev_features = self.lateral_convs[0](x[0])
+        prev_features = self.lateral_convs[0](bottom_up_features[self.in_features[-1]])
         results.append(self.output_convs[0](prev_features))
-        for features, lateral_conv, output_conv in zip(
-            x[1:], self.lateral_convs[1:], self.output_convs[1:]
+
+        # Reverse feature maps into top-down order (from low to high resolution)
+        for idx, (lateral_conv, output_conv) in enumerate(
+            zip(self.lateral_convs, self.output_convs)
         ):
-            top_down_features = F.interpolate(prev_features, scale_factor=2, mode="nearest")
-            lateral_features = lateral_conv(features)
-            prev_features = lateral_features + top_down_features
-            if self._fuse_type == "avg":
-                prev_features /= 2
-            results.insert(0, output_conv(prev_features))
+            # Slicing of ModuleList is not supported https://github.com/pytorch/pytorch/issues/47336
+            # Therefore we loop over all modules but skip the first one
+            if idx > 0:
+                features = self.in_features[-idx - 1]
+                features = bottom_up_features[features]
+                top_down_features = F.interpolate(prev_features, scale_factor=2.0, mode="nearest")
+                lateral_features = lateral_conv(features)
+                prev_features = lateral_features + top_down_features
+                if self._fuse_type == "avg":
+                    prev_features /= 2
+                results.insert(0, output_conv(prev_features))
 
         if self.top_block is not None:
-            top_block_in_feature = bottom_up_features.get(self.top_block.in_feature, None)
-            if top_block_in_feature is None:
+            if self.top_block.in_feature in bottom_up_features:
+                top_block_in_feature = bottom_up_features[self.top_block.in_feature]
+            else:
                 top_block_in_feature = results[self._out_features.index(self.top_block.in_feature)]
             results.extend(self.top_block(top_block_in_feature))
         assert len(self._out_features) == len(results)
-        return dict(zip(self._out_features, results)), bottom_up_features
+        return {f: res for f, res in zip(self._out_features, results)}, bottom_up_features
 
     def output_shape(self):
         return {
