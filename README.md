@@ -18,15 +18,14 @@ Please leave a star ⭐ and cite the following [paper](http://www.sciencedirect.
 
 ## Installation
 You can use this repo following one of these three methods:<br>
-NB: Detectron2 0.2.1 is required, installing other versions this code will not work.
+NB: Detectron2 0.6 is required, installing other versions this code will not work.
 
 ### Detectron 2 on your PC
-Follow the official guide to install [Detectron2 0.2.1](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)<br>
+Follow the official guide to install [Detectron2 0.6](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)<br>
 Or<br>
-Download the official Detectron 0.2.1 from [here](https://github.com/facebookresearch/detectron2/archive/refs/tags/v0.2.1.zip)<br>
+Download the official Detectron 0.6 from [here](https://github.com/facebookresearch/detectron2/archive/refs/tags/v0.6.zip)<br>
 Unzip the file and rename it in detectron2<br>
 run ```python -m pip install -e detectron2```
-
 
 ### Detectron2 via Dockerfile
 Follow these instructions:
@@ -67,7 +66,7 @@ For PASCAL VOC annotations, inside the ```cityscape_train.py``` register your da
 You need to replace the parameters inside the ```register_pascal_voc()``` function according to your dataset name and classes. <br>
 
 ## Training
-Replace at the following path ```detectron2/modeling/meta_arch/``` the ```retinanet.py``` script with our ```retinanet.py```. <br>
+Replace at the following path ```detectron2/modeling/meta_arch/``` the ```dense_detector.py``` script with our ```dense_detector.py```. <br>
 Do the same for the ```fpn.py``` file at the path ```detectron2/modeling/backbone/```<br>
 
 Run the script ```uda_train.py``` for COCO annotations or ```cityscape_train.py``` for PASCAL VOC annotations. <br>
