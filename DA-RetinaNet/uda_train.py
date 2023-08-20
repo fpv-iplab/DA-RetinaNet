@@ -1,24 +1,21 @@
-import detectron2
-from detectron2.utils.logger import setup_logger
-setup_logger()
-import numpy as np
-import cv2
-import random
-from detectron2 import model_zoo
-from detectron2.config import get_cfg
 import logging
 import os
-from collections import OrderedDict
-from torch.nn.parallel import DistributedDataParallel
+import torch
+import detectron2
+import numpy as np
+from detectron2 import model_zoo
+from detectron2.utils.logger import setup_logger
+setup_logger()
 import detectron2.utils.comm as comm
 from detectron2.checkpoint import DetectionCheckpointer, PeriodicCheckpointer
-from detectron2.data import MetadataCatalog, build_detection_test_loader, build_detection_train_loader
+from detectron2.config import get_cfg
+from detectron2.data import (build_detection_test_loader,build_detection_train_loader,)
+from detectron2.engine import default_writers
+from detectron2.evaluation import (COCOEvaluator,inference_on_dataset)
 from detectron2.modeling import build_model
 from detectron2.solver import build_lr_scheduler, build_optimizer
-from detectron2.utils.events import CommonMetricPrinter, EventStorage, JSONWriter, TensorboardXWriter
-import torch, torchvision
-from detectron2.data.datasets import register_coco_instances,load_coco_json
-
+from detectron2.utils.events import EventStorage
+from detectron2.data.datasets import register_coco_instances
 #training set
 register_coco_instances("dataset_train_synthetic", {}, "synthetic_datataset/Object_annotations/Training_annotations.json", "synthetic_images")
 register_coco_instances("dataset_train_real", {}, "real_dataset/train/trainset.json", "real_dataset/train")
@@ -29,35 +26,18 @@ register_coco_instances("dataset_test_real", {}, "real_dataset/test/testset.json
 logger = logging.getLogger("detectron2")
 
 def do_train(cfg_source, cfg_target, model, resume = False):
-    
-    model.train()
     print(model)
-    
+    model.train()
     optimizer = build_optimizer(cfg_source, model)
     scheduler = build_lr_scheduler(cfg_source, optimizer)
+    checkpointer = DetectionCheckpointer(model, cfg_source.OUTPUT_DIR, optimizer=optimizer, scheduler=scheduler)
 
-    checkpointer = DetectionCheckpointer(
-        model, cfg_source.OUTPUT_DIR, optimizer = optimizer, scheduler = scheduler
-    )
-    start_iter = (
-        checkpointer.resume_or_load(cfg_source.MODEL.WEIGHTS, resume = resume).get("iteration", -1) + 1
-    )
+    start_iter = (checkpointer.resume_or_load(cfg_source.MODEL.WEIGHTS, resume=resume).get("iteration", -1) + 1)
     max_iter = cfg_source.SOLVER.MAX_ITER
 
-    periodic_checkpointer = PeriodicCheckpointer(
-        checkpointer, cfg_source.SOLVER.CHECKPOINT_PERIOD, max_iter = max_iter
-    )
+    periodic_checkpointer = PeriodicCheckpointer(checkpointer, cfg_source.SOLVER.CHECKPOINT_PERIOD, max_iter=max_iter)
+    writers = default_writers(cfg_source.OUTPUT_DIR, max_iter) if comm.is_main_process() else []
 
-    writers = (
-        [
-            CommonMetricPrinter(max_iter),
-            JSONWriter(os.path.join(cfg_source.OUTPUT_DIR, "metrics.json")),
-            TensorboardXWriter(cfg_source.OUTPUT_DIR),
-        ]
-        if comm.is_main_process()
-        else []
-    )
-    
     i = 1
     max_epoch = 41.27 # max iter / min(data_len(data_source, data_target))
     current_epoch = 0
@@ -66,16 +46,16 @@ def do_train(cfg_source, cfg_target, model, resume = False):
     alpha3 = 0
     alpha4 = 0
     alpha5 = 0
-   
+
     data_loader_source = build_detection_train_loader(cfg_source)
     data_loader_target = build_detection_train_loader(cfg_target) 
     logger.info("Starting training from iteration {}".format(start_iter))
 
     with EventStorage(start_iter) as storage:
         for data_source,data_target, iteration in zip(data_loader_source, data_loader_target, range(start_iter, max_iter)):
+            storage.iter = iteration
+
             iteration = iteration + 1
-            storage.step()
-            
             if (iteration % data_len) == 0:
                 current_epoch += 1
                 i = 1
@@ -96,7 +76,7 @@ def do_train(cfg_source, cfg_target, model, resume = False):
 
             if alpha5 > 0.1:
                 alpha5 = 0.1
-            
+
             loss_dict = model(data_source, False, alpha3, alpha4, alpha5)
             loss_dict_target = model(data_target, True, alpha3, alpha4, alpha5)
             loss_dict["loss_r3"] += loss_dict_target["loss_r3"]
@@ -106,7 +86,6 @@ def do_train(cfg_source, cfg_target, model, resume = False):
             loss_dict["loss_r3"] *= 0.5
             loss_dict["loss_r4"] *= 0.5
             loss_dict["loss_r5"] *= 0.5
-
             losses = sum(loss_dict.values())
             assert torch.isfinite(losses).all(), loss_dict
 
@@ -121,7 +100,7 @@ def do_train(cfg_source, cfg_target, model, resume = False):
             storage.put_scalar("lr", optimizer.param_groups[0]["lr"], smoothing_hint=False)
             scheduler.step()
 
-            if iteration - start_iter > 5 and (iteration % 20 == 0 or iteration == max_iter):
+            if iteration - start_iter > 5 and ((iteration + 1) % 20 == 0 or iteration == max_iter - 1):
                 for writer in writers:
                     writer.write()
             periodic_checkpointer.step(iteration)
