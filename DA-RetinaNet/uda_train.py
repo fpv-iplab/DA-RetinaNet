@@ -115,7 +115,7 @@ cfg_source.SOLVER.BASE_LR = 0.0002
 cfg_source.SOLVER.WEIGHT_DECAY = 0.001
 cfg_source.SOLVER.MAX_ITER = 62000
 cfg_source.SOLVER.STEPS = (30000,)
-cfg_source.INPUT.MIN_SIZE_TRAIN = (0,)
+#cfg_source.INPUT.MIN_SIZE_TRAIN = (0,)
 cfg_source.INPUT.MIN_SIZE_TEST = 0
 os.makedirs(cfg_source.OUTPUT_DIR, exist_ok=True)
 cfg_source.MODEL.RETINANET.NUM_CLASSES = 16
@@ -123,7 +123,7 @@ model = build_model(cfg_source)
 
 cfg_target = get_cfg()
 cfg_target.DATASETS.TRAIN = ("dataset_train_real",)
-cfg_target.INPUT.MIN_SIZE_TRAIN = (0,)
+#cfg_target.INPUT.MIN_SIZE_TRAIN = (0,)
 cfg_target.DATALOADER.NUM_WORKERS = 2
 cfg_target.SOLVER.IMS_PER_BATCH = 2
 
