@@ -22,7 +22,7 @@ NB: Detectron2 0.6 is required, installing other versions this code will not wor
 
 ### Google Colab
 Quickstart here 👉 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/GiovanniPasq/e8cc5e9d955ad01bf11df993ba276909/da-retinanet.ipynb)<br>
-Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.<br>
+Or load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.<br>
 
 ### Detectron2 on your PC
 Follow the official guide to install [Detectron2 0.6](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)<br>
