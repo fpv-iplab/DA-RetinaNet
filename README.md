@@ -20,6 +20,10 @@ Please leave a star ⭐ and cite the following [paper](http://www.sciencedirect.
 You can use this repo following one of these three methods:<br>
 NB: Detectron2 0.6 is required, installing other versions this code will not work.
 
+### Google Colab
+Quickstart here 👉 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/GiovanniPasq/e8cc5e9d955ad01bf11df993ba276909/da-retinanet.ipynb)<br>
+Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.<br>
+
 ### Detectron2 on your PC
 Follow the official guide to install [Detectron2 0.6](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)<br>
 Or<br>
@@ -42,9 +46,6 @@ If you exit from the container you can restart it using:
 docker start name_container
 docker exec -it name_container /bin/bash
 ```
-
-### Google Colab
-Load and run the ```DA-RetinaNet.ipynb``` on Google Colab following the instructions inside the notebook.
 
 ## Dataset
 Create the Cityscapes-Foggy Cityscapes dataset following the instructions available [here](https://github.com/yuhuayc/da-faster-rcnn/tree/master/prepare_data)<br>
